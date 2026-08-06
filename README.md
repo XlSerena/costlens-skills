@@ -60,12 +60,15 @@ Prove the math without production data:
 
 ```bash
 python3 scripts/verify_fixtures.py
+python3 scripts/check_trigger_phrases.py
 ```
 
 See [`fixtures/synthetic/`](./fixtures/synthetic/) — cycle reset, negative correction, missing `cycle_id` abort, unassigned spender, alert dedupe.
 
-## References
+## Docs
 
+- [`docs/story-when-the-daily-chart-lied.md`](./docs/story-when-the-daily-chart-lied.md) — desensitized launch note (chart lies + pager spam)
+- [`docs/trigger-self-test.md`](./docs/trigger-self-test.md) — phrases to verify skill routing
 - [`references/vendor-api-gaps.md`](./references/vendor-api-gaps.md) — edge cases
 - [`references/examples.md`](./references/examples.md) — design + review walkthroughs
 
