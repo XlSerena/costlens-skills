@@ -1,0 +1,14 @@
+{
+  "threshold_person_daily_cents": 400,
+  "threshold_version": "v1",
+  "replay_batches": ["batch_2026-03-02", "batch_2026-03-02_replay"],
+  "expected_alert_keys": [
+    "2026-03-01|alice@example.com|daily_spend|v1",
+    "2026-03-01|bob@example.com|daily_spend|v1",
+    "2026-03-02|alice@example.com|daily_spend|v1"
+  ],
+  "notes": [
+    "Any derived daily >= 400¢ pages once per (date, person, metric, version).",
+    "Recomputing the same dailies (sync replay) must not create additional keys."
+  ]
+}

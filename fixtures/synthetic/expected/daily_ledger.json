@@ -1,0 +1,35 @@
+{
+  "derivation": "same_cycle_snapshot_diff",
+  "entry_point": "synthetic_ai_ide",
+  "rows": [
+    {"date": "2026-03-01", "person_key": "alice@example.com", "cycle_id": "2026-03-01", "spend_cents": 1000},
+    {"date": "2026-03-01", "person_key": "bob@example.com", "cycle_id": "2026-03-01", "spend_cents": 500},
+    {"date": "2026-03-01", "person_key": "cara@example.com", "cycle_id": "2026-03-01", "spend_cents": 200},
+    {"date": "2026-03-01", "person_key": "unmapped@example.com", "cycle_id": "2026-03-01", "spend_cents": 50},
+
+    {"date": "2026-03-02", "person_key": "alice@example.com", "cycle_id": "2026-03-01", "spend_cents": 500},
+    {"date": "2026-03-02", "person_key": "bob@example.com", "cycle_id": "2026-03-01", "spend_cents": 0},
+    {"date": "2026-03-02", "person_key": "cara@example.com", "cycle_id": "2026-03-01", "spend_cents": 150},
+    {"date": "2026-03-02", "person_key": "unmapped@example.com", "cycle_id": "2026-03-01", "spend_cents": 0},
+
+    {"date": "2026-03-03", "person_key": "alice@example.com", "cycle_id": "2026-03-01", "spend_cents": 0},
+    {"date": "2026-03-03", "person_key": "bob@example.com", "cycle_id": "2026-03-01", "spend_cents": 300},
+    {"date": "2026-03-03", "person_key": "cara@example.com", "cycle_id": "2026-03-01", "spend_cents": 0},
+    {"date": "2026-03-03", "person_key": "unmapped@example.com", "cycle_id": "2026-03-01", "spend_cents": 40},
+
+    {"date": "2026-03-04", "person_key": "alice@example.com", "cycle_id": "2026-03-01", "spend_cents": -20, "note": "in-cycle correction"},
+    {"date": "2026-03-04", "person_key": "bob@example.com", "cycle_id": "2026-03-01", "spend_cents": 0},
+    {"date": "2026-03-04", "person_key": "cara@example.com", "cycle_id": "2026-03-01", "spend_cents": 0},
+    {"date": "2026-03-04", "person_key": "unmapped@example.com", "cycle_id": "2026-03-01", "spend_cents": 0},
+
+    {"date": "2026-04-01", "person_key": "alice@example.com", "cycle_id": "2026-04-01", "spend_cents": 100, "note": "new cycle reset"},
+    {"date": "2026-04-01", "person_key": "bob@example.com", "cycle_id": "2026-04-01", "spend_cents": 50},
+    {"date": "2026-04-01", "person_key": "cara@example.com", "cycle_id": "2026-04-01", "spend_cents": 0},
+    {"date": "2026-04-01", "person_key": "unmapped@example.com", "cycle_id": "2026-04-01", "spend_cents": 10},
+
+    {"date": "2026-04-02", "person_key": "alice@example.com", "cycle_id": "2026-04-01", "spend_cents": 150},
+    {"date": "2026-04-02", "person_key": "bob@example.com", "cycle_id": "2026-04-01", "spend_cents": 0},
+    {"date": "2026-04-02", "person_key": "cara@example.com", "cycle_id": "2026-04-01", "spend_cents": 40},
+    {"date": "2026-04-02", "person_key": "unmapped@example.com", "cycle_id": "2026-04-01", "spend_cents": 0}
+  ]
+}

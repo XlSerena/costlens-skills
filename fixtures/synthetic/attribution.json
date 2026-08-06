@@ -1,0 +1,30 @@
+{
+  "policy": "one_active_team_per_person",
+  "ranking_population": "seat_roster",
+  "mappings": [
+    {
+      "person_key": "alice@example.com",
+      "team_id": "team_platform",
+      "cost_center": "cc_eng",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "person_key": "bob@example.com",
+      "team_id": "team_platform",
+      "cost_center": "cc_eng",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    },
+    {
+      "person_key": "cara@example.com",
+      "team_id": "team_product",
+      "cost_center": "cc_prod",
+      "effective_from": "2026-01-01",
+      "effective_to": null
+    }
+  ],
+  "notes": [
+    "unmapped@example.com intentionally has no team — must surface as unassigned, not drop."
+  ]
+}

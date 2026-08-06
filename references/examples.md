@@ -1,5 +1,10 @@
 # Examples
 
+Companion walkthroughs for the CostLens skills under `skills/`.
+Prefer invoking the focused skill that matches the step
+(`spend-entry-inventory` → `cycle-total-to-daily` → `spend-attribution` →
+`spend-alerts` → `spend-reconciliation`).
+
 ## Example A — Design a first ledger (cycle-total Admin API)
 
 **Input (sanitized):**

@@ -1,0 +1,25 @@
+{
+  "cycles": [
+    {
+      "cycle_id": "2026-03-01",
+      "latest_totals_cents": {
+        "alice@example.com": 1480,
+        "bob@example.com": 800,
+        "cara@example.com": 350,
+        "unmapped@example.com": 90
+      }
+    },
+    {
+      "cycle_id": "2026-04-01",
+      "latest_totals_cents": {
+        "alice@example.com": 250,
+        "bob@example.com": 50,
+        "cara@example.com": 40,
+        "unmapped@example.com": 10
+      }
+    }
+  ],
+  "unassigned_person_keys": ["unmapped@example.com"],
+  "abort_batches": ["batch_bad_missing_cycle"],
+  "rounding_tolerance_cents": 0
+}

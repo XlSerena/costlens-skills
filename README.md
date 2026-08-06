@@ -1,69 +1,95 @@
 # CostLens Skills
 
-Agent Skills distilled from **CostLens** (AI / vibe-coding spend governance):
-method and checklists only — **no company code, keys, or tenant data**.
+**Stop vibe-coding spend from becoming an untrusted spreadsheet.**
 
-Works with any agent that can load skill markdown (Cursor, Claude Code, Codex, etc.).
-Cursor install path below is one common option, not a product lock-in.
+Agent Skills for **AI / vibe-coding spend governance** (CostLens method):
+entry-point inventory, cycle-total → daily derivation, org attribution,
+deduplicated alerts, and reconciliation — **method + synthetic fixtures only**.
 
-[Website](https://xlserena.github.io) · Author [XlSerena](https://github.com/XlSerena)
+No company code, API keys, org rosters, or chat tenants.
+
+[Website](https://xlserena.github.io) · Author [XlSerena](https://github.com/XlSerena) · Related: [agent-tool-safety](https://github.com/XlSerena/agent-tool-safety)
+
+[![skills.sh](https://skills.sh/b/XlSerena/costlens-skills)](https://skills.sh/XlSerena/costlens-skills)
 
 ---
 
-### English
+## Promise
 
-**What this is** — Reusable agent instructions for designing or reviewing a trustworthy AI spend ledger when vendors expose uneven API grain (usage vs dollars, daily rows vs billing-cycle totals) and no native team model.
+Vendors expose uneven grain (usage vs dollars, daily rows vs **billing-cycle totals**) and usually **no team model**. These skills encode how to build a ledger you can defend in review — including the excuses teams use to skip the hard parts.
 
-**What’s inside**
+## Skills
 
-| Skill | Use when |
-|-------|----------|
-| [`ai-spend-governance`](./ai-spend-governance/) | Building or reviewing CostLens-style ingestion, attribution, daily series from cycle totals, rankings, and deduplicated alerts |
+| Skill | Trigger when | Not for |
+|-------|----------------|---------|
+| [`spend-entry-inventory`](./skills/spend-entry-inventory/) | Onboarding an AI IDE/gateway/vendor; spend vs usage APIs unclear | General AWS FinOps without AI seats |
+| [`cycle-total-to-daily`](./skills/cycle-total-to-daily/) | Admin API is cycle-cumulative only; need daily charts | Native daily spend APIs (document “no derivation”) |
+| [`spend-attribution`](./skills/spend-attribution/) | Team/cost-center rank; vendor has seats not teams | Hardcoding a real org chart into a public skill |
+| [`spend-alerts`](./skills/spend-alerts/) | Chat/email alerts on spikes or sync failure; backfills re-run | Paging on usage labeled as USD |
+| [`spend-reconciliation`](./skills/spend-reconciliation/) | Pre-prod review; chart “looks fine” but totals drift | Legal GL close |
 
-**Install**
+Each skill has an **anti-rationalization** table: common excuses → required response.
 
-Clone, then copy the skill folder into your agent’s skills directory:
+## Install
+
+### Fast path — [skills CLI](https://github.com/vercel-labs/skills) (Cursor, Claude Code, Codex, …)
+
+```bash
+npx skills add XlSerena/costlens-skills
+npx skills add XlSerena/costlens-skills --list
+npx skills add XlSerena/costlens-skills --skill cycle-total-to-daily
+```
+
+### Manual
 
 ```bash
 git clone https://github.com/XlSerena/costlens-skills.git
+# Cursor example (personal)
+cp -R costlens-skills/skills/cycle-total-to-daily ~/.cursor/skills/cycle-total-to-daily
 ```
 
-Examples:
+| Agent | Typical skills path |
+|-------|---------------------|
+| Cursor | `~/.cursor/skills/<name>` or project `.cursor/skills/` |
+| Claude Code | `.claude/skills/` or plugin install |
+| Codex | `.agents/skills/` / `.codex/skills/` |
 
-| Agent | Typical path |
-|-------|----------------|
-| Cursor | `~/.cursor/skills/ai-spend-governance` or project `.cursor/skills/` |
-| Other agents | Follow that product’s skill / instruction-pack convention; point it at `ai-spend-governance/SKILL.md` |
+## Synthetic fixtures
+
+Prove the math without production data:
 
 ```bash
-# Cursor (personal, all projects)
-cp -R costlens-skills/ai-spend-governance ~/.cursor/skills/ai-spend-governance
+python3 scripts/verify_fixtures.py
 ```
 
-**Not included** — Production services, vendor API credentials, org rosters, or chat-tenant wiring. Those stay private; this repo ships the durable method.
+See [`fixtures/synthetic/`](./fixtures/synthetic/) — cycle reset, negative correction, missing `cycle_id` abort, unassigned spender, alert dedupe.
 
----
+## References
 
-### 中文
+- [`references/vendor-api-gaps.md`](./references/vendor-api-gaps.md) — edge cases
+- [`references/examples.md`](./references/examples.md) — design + review walkthroughs
 
-**这是什么** — 从 **CostLens**（vibe coding / AI 花销治理）脱敏蒸馏出的 Agent Skill：只含方法与清单，**不含公司代码、密钥或租户数据**。
+## Who this is for
 
-方法本身不绑定某一家 AI IDE；凡能加载 skill / 指令包的 agent 都可用。下文 Cursor 路径只是常见安装示例。
+- Platform / data engineers building AI seat spend dashboards
+- Teams unifying Cursor / Claude / gateway bills into one ledger
+- Reviewers who need a checklist when sync code is already messy
 
-**何时用** — 厂商 API 粒度不一致（用量 vs 金额、按日明细 vs 仅账期累计）、且没有原生「组」模型时，设计或评审一套可信的 AI 花销台账。
+## Who this is not for
 
-**安装**
+- Estimating in-app LLM token cost with no vendor seat API
+- Replacing finance systems of record
+- Copy-pasting employer emails, teams, or API keys into skills
+
+## 中文摘要
+
+从 **CostLens**（vibe coding / AI 花销治理）脱敏蒸馏的 Agent Skills：入口盘点、账期累计→按日、组织归因、去重告警、对账。含合成 fixture 与反合理化表。**不含公司代码与租户数据。**
 
 ```bash
-git clone https://github.com/XlSerena/costlens-skills.git
-# Cursor 示例（个人全局）
-cp -R costlens-skills/ai-spend-governance ~/.cursor/skills/ai-spend-governance
+npx skills add XlSerena/costlens-skills
+python3 scripts/verify_fixtures.py
 ```
 
-其他 agent：按其 skill / 指令包约定，指向 `ai-spend-governance/SKILL.md` 即可。
-
----
-
-### License
+## License
 
 MIT — see [LICENSE](./LICENSE).

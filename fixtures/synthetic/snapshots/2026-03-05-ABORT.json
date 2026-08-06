@@ -1,0 +1,13 @@
+{
+  "batch_id": "batch_bad_missing_cycle",
+  "date": "2026-03-05",
+  "entry_point": "synthetic_ai_ide",
+  "expect_abort": true,
+  "reason": "cycle_id missing — sync must fail closed",
+  "snapshots": [
+    {
+      "person_key": "alice@example.com",
+      "cycle_total_cents": 1600
+    }
+  ]
+}

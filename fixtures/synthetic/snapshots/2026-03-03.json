@@ -1,0 +1,27 @@
+{
+  "batch_id": "batch_2026-03-03",
+  "date": "2026-03-03",
+  "entry_point": "synthetic_ai_ide",
+  "snapshots": [
+    {
+      "person_key": "alice@example.com",
+      "cycle_id": "2026-03-01",
+      "cycle_total_cents": 1500
+    },
+    {
+      "person_key": "bob@example.com",
+      "cycle_id": "2026-03-01",
+      "cycle_total_cents": 800
+    },
+    {
+      "person_key": "cara@example.com",
+      "cycle_id": "2026-03-01",
+      "cycle_total_cents": 350
+    },
+    {
+      "person_key": "unmapped@example.com",
+      "cycle_id": "2026-03-01",
+      "cycle_total_cents": 90
+    }
+  ]
+}

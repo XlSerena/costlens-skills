@@ -1,0 +1,23 @@
+{
+  "entry_point": "synthetic_ai_ide",
+  "currency": "USD_cents",
+  "description": "Toy vendor: cycle-total-only Admin API. No real org data.",
+  "people": [
+    {
+      "person_key": "alice@example.com",
+      "vendor_user_id": "u_alice"
+    },
+    {
+      "person_key": "bob@example.com",
+      "vendor_user_id": "u_bob"
+    },
+    {
+      "person_key": "cara@example.com",
+      "vendor_user_id": "u_cara"
+    },
+    {
+      "person_key": "unmapped@example.com",
+      "vendor_user_id": "u_orphan"
+    }
+  ]
+}
