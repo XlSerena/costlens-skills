@@ -4,7 +4,7 @@ description: >-
   Designs and reviews AI / vibe-coding spend ledgers across vendor entry points:
   ingestion, person/team attribution, daily series from cycle-total-only APIs,
   rankings, and deduplicated alerts. Use when building CostLens-style governance,
-  Cursor Admin API spend sync, AI cost dashboards, spend attribution, or when the
+  AI IDE or gateway spend sync, cost dashboards, spend attribution, or when the
   user mentions cycle totals, daily spend snapshots, or AI spend alerts.
 ---
 
@@ -18,7 +18,7 @@ guessing vendor semantics.
 
 ## When to apply
 
-- Unifying spend across Cursor / Copilot / Claude / other AI entry points
+- Unifying spend across AI IDEs, coding agents, gateways, and other entry points
 - Vendor API returns **cycle-to-date totals** but product needs **daily series**
 - Need person → team attribution the vendor does not provide
 - Designing rankings, drill-downs, or chat/ops alerts without double-firing

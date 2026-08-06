@@ -66,7 +66,7 @@ Vendors change field names. Pattern:
 
 ## Multi entry-point joins
 
-When Cursor + another tool both bill the same human:
+When an AI IDE seat product + another tool both bill the same human:
 
 - Normalize to one `person_key` (usually email)
 - Keep `entry_point` on every fact row
